@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-8-14 16:29:14 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.u1.model.UserForAuthOnly" table="users">
+        <id name="userId" type="integer">
+            <column name="USER_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="USERNAME" length="45" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="100" not-null="true" />
+        </property>
+<!--         <property name="userType" type="string"> -->
+<!--             <column name="USER_TYPE" length="20" /> -->
+<!--         </property> -->
+<!--         <property name="accountNonExpired" type="boolean"> -->
+<!--             <column name="ACCOUNT_NON_EXPIRED" not-null="true" /> -->
+<!--         </property> -->
+<!--         <property name="accountNonLocked" type="boolean"> -->
+<!--             <column name="ACCOUNT_NON_LOCKED" not-null="true" /> -->
+<!--         </property> -->
+<!--         <property name="credentialsNonExpired" type="boolean"> -->
+<!--             <column name="CREDENTIALS_NON_EXPIRED" not-null="true" /> -->
+<!--         </property> -->
+        <property name="enabled" type="boolean">
+            <column name="ENABLED" not-null="true" />
+        </property>
+        <property name="createdTimestamp" type="timestamp" generated="insert">
+            <column name="CREATED_TIMESTAMP" length="19" not-null="true" default="CURRENT_TIMESTAMP"/>
+        </property>
+        <property name="lastUpdatedTimestamp" type="timestamp" generated="always">
+            <column name="LAST_UPDATED_TIMESTAMP" length="19" not-null="true" default="ON UPDATE CURRENT_TIMESTAMP"/>
+        </property>
+<!--         <property name="salt" type="string"> -->
+<!--             <column name="SALT" length="45" not-null="true" /> -->
+<!--         </property> -->
+<!--         <property name="companyName" type="string"> -->
+<!--             <column name="COMPANY_NAME" length="100" /> -->
+<!--         </property> -->
+        <property name="givenName" type="string">
+            <column name="GIVEN_NAME" length="30" />
+        </property>
+<!--         <property name="familyName" type="string"> -->
+<!--             <column name="FAMILY_NAME" length="30" /> -->
+<!--         </property> -->
+<!--         <property name="gender" type="string"> -->
+<!--             <column name="GENDER" length="5" /> -->
+<!--         </property> -->
+<!--         <property name="age" type="java.lang.Integer"> -->
+<!--             <column name="AGE" /> -->
+<!--         </property> -->
+<!--         <property name="birthday" type="date"> -->
+<!--             <column name="BIRTHDAY" length="10" /> -->
+<!--         </property> -->
+<!--         <property name="email" type="string"> -->
+<!--             <column name="EMAIL" length="50" /> -->
+<!--         </property> -->
+<!--         <property name="telephone" type="string"> -->
+<!--             <column name="TELEPHONE" length="18" /> -->
+<!--         </property> -->
+<!--         <property name="address1" type="string"> -->
+<!--             <column name="ADDRESS1" length="300" /> -->
+<!--         </property> -->
+<!--         <property name="address2" type="string"> -->
+<!--             <column name="ADDRESS2" length="300" /> -->
+<!--         </property> -->
+<!--         <property name="address3" type="string"> -->
+<!--             <column name="ADDRESS3" length="300" /> -->
+<!--         </property> -->
+<!--         <property name="phone1" type="string"> -->
+<!--             <column name="PHONE1" length="20" /> -->
+<!--         </property> -->
+<!--         <property name="phone2" type="string"> -->
+<!--             <column name="PHONE2" length="20" /> -->
+<!--         </property> -->
+<!--         <property name="phone3" type="string"> -->
+<!--             <column name="PHONE3" length="20" /> -->
+<!--         </property> -->
+<!--         <property name="photo" type="string"> -->
+<!--             <column name="PHOTO" length="300" /> -->
+<!--         </property> -->
+<!--         <property name="degree" type="string"> -->
+<!--             <column name="DEGREE" length="20" /> -->
+<!--         </property> -->
+<!--         <property name="englishName" type="string"> -->
+<!--             <column name="ENGLISH_NAME" length="30" /> -->
+<!--         </property> -->
+<!--         <property name="position" type="string"> -->
+<!--             <column name="POSITION" length="80" /> -->
+<!--         </property> -->
+<!--         <property name="graduateSchool" type="string"> -->
+<!--             <column name="GRADUATE_SCHOOL" length="100" /> -->
+<!--         </property> -->
+<!--         <property name="major" type="string"> -->
+<!--             <column name="MAJOR" length="80" /> -->
+<!--         </property> -->
+<!--         <property name="fax" type="string"> -->
+<!--             <column name="FAX" length="20" /> -->
+<!--         </property> -->
+<!--         <property name="qq" type="string"> -->
+<!--             <column name="QQ" length="15" /> -->
+<!--         </property> -->
+<!--         <property name="website" type="string"> -->
+<!--             <column name="WEBSITE" length="50" /> -->
+<!--         </property> -->
+<!--         <property name="msn" type="string"> -->
+<!--             <column name="MSN" length="50" /> -->
+<!--         </property> -->
+		<many-to-one name="customer" lazy="false" fetch="join" class="com.u1.model.Customer" cascade="none">
+			<column name="CUSTOMER_ID"/>
+		</many-to-one>
+    </class>
+</hibernate-mapping>

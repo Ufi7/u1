@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.u1.model.AssetType" table="ASSET_TYPE">
+		<id name="assetTypePid" type="integer">
+			<column name="ASSET_TYPE_PID" />
+			<generator class="identity" />
+		</id>
+		<property name="code" type="string">
+			<column name="ASSET_TYPE_CODE" length="200" not-null="true" />
+		</property>
+
+		<property name="description" type="string">
+			<column name="ASSET_TYPE_DESC" length="200" not-null="true" />
+		</property>
+
+		<property name="enabled" type="boolean">
+			<column name="ENABLED" not-null="true" />
+		</property>
+		<property name="definedCode" type="string">
+			<column name="DEFINED_CODE" length="3" not-null="false"/>
+		</property>
+<!-- 		<property name="definedNum" type="integer"> -->
+<!-- 			<column name="DEFINED_NUM" not-null="false"/> -->
+<!-- 		</property> -->
+<!-- 
+		<set name="attrTemplateSet" table="ASSET_ATTRIBUTES_TEMPLATE"
+			inverse="true" lazy="false" fetch="select">
+			<key>
+				<column name="ASSET_TYPE_CODE" not-null="false" />
+			</key>
+			<one-to-many class="com.compassoft.core.domain.AssetAttributeTemplate" />
+		</set>
+		 
+		
+		<set name="knowledgeRecordSet" table="KNOWLEDGE_RECORD" inverse="true"
+			lazy="false" fetch="select">
+			<key>
+				<column name="ASSET_TYPE_CODE" not-null="false" />
+			</key>
+			<one-to-many class="com.compassoft.core.domain.KnowledgeRecord" />
+		</set>
+		-->
+	</class>
+</hibernate-mapping>

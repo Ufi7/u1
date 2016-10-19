@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-1-20 17:35:48 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.u1.model.Customer" table="customer" catalog="u1">
+        <id name="customerId" type="java.lang.Integer">
+            <column name="CUSTOMER_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="customerName" type="string">
+            <column name="CUSTOMER_NAME" length="50" />
+        </property>
+        <property name="customerDesc" type="string">
+            <column name="CUSTOMER_DESC" length="200" />
+        </property>
+        <property name="enabled" type="java.lang.Boolean">
+            <column name="ENABLED" />
+        </property>
+        <property name="createdBy" type="java.lang.Integer">
+            <column name="CREATED_BY" />
+        </property>
+        <property name="createdTimestamp" type="timestamp">
+            <column name="CREATED_TIMESTAMP" length="19" />
+        </property>
+        <property name="lastUpdatedBy" type="java.lang.Integer">
+            <column name="LAST_UPDATED_BY" />
+        </property>
+        <property name="lastUpdatedTimestamp" type="timestamp">
+            <column name="LAST_UPDATED_TIMESTAMP" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

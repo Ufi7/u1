@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-12-19 21:15:35 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.u1.model.TaskLog" table="task_log">
+        <id name="taskLogId" type="integer">
+            <column name="TASK_LOG_ID" />
+            <generator class="identity" />
+        </id>
+<!--         <property name="taskPid" type="integer"> -->
+<!--             <column name="TASK_PID" /> -->
+<!--         </property> -->
+		<many-to-one name="task" lazy="false" fetch="join" class="com.u1.model.RefTask" cascade="none">
+			<column name="TASK_PID"/>
+		</many-to-one>
+<!--         <property name="assetPid" type="integer"> -->
+<!--             <column name="ASSET_PID"  /> -->
+<!--         </property> -->
+<!-- 		<many-to-one name="task" lazy="proxy" class="com.u1.model.TaskWithAsset" cascade="none"> -->
+<!-- 			<column name="TASK_PID"/> -->
+<!-- 		</many-to-one> -->
+        <many-to-one name="owner" lazy="false" fetch="join" class="com.u1.model.RefUser" cascade="none">
+			<column name="OWNER"/>
+		</many-to-one>
+		<many-to-one name="assignedTo" lazy="false" fetch="join" class="com.u1.model.RefUser" cascade="none">
+			<column name="ASSIGNED_TO"/>
+		</many-to-one>
+        <property name="actionCode" type="string">
+            <column name="ACTION_CODE" length="20" />
+        </property>
+        <property name="remark" type="string">
+            <column name="REMARK" length="100" />
+        </property>
+        <property name="autoremark" type="string">
+            <column name="AUTOREMARK" length="100" />
+        </property>
+        <property name="createdtimestamp" type="timestamp" generated="insert">
+			<column name="CREATEDTIMESTAMP" length="19" not-null="true"  default="CURRENT_TIMESTAMP"/>
+        </property>
+        <bag name="recordList" table="componentrecord" lazy="false" fetch="select" cascade="none" inverse="true">
+			<key>
+				<column name="TASK_LOG_ID" not-null="true" />
+			</key>
+			<one-to-many class="com.u1.model.Componentrecord"/>
+		</bag>
+    </class>
+</hibernate-mapping>

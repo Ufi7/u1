@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.u1.model.AttrSelectOption" table="ATTRIBUTE_SELECT_OPTION">
+
+		<id name="attrSelectOptionPid" type="integer">
+			<column name="ATTR_SELECT_OPT_PID" />
+			<generator class="identity" />
+		</id>
+<!-- 		<property name="value" type="string"> -->
+<!-- 			<column name="SELECT_VALUE" length="100" not-null="true" /> -->
+<!-- 		</property> -->
+		<property name="description" type="string">
+			<column name="SELECT_DESC" length="200" not-null="true" />
+		</property>
+		<many-to-one name="template" lazy="proxy" fetch="select" class="com.u1.model.AssetAttributesTemplateWithOption">
+			<column name="ATTRIBUTE_TEMPLATE_PID" not-null="true" />
+		</many-to-one>
+<!-- 		<many-to-one name="template" class="com.u1.model.AssetAttributesTemplate" update="true" insert="true" lazy="false"><column name="ATTRIBUTE_TEMPLATE_PID"/></many-to-one> -->
+	</class>
+</hibernate-mapping>

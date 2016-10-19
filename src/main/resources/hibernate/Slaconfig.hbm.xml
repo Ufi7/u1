@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-12-31 1:43:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.u1.model.Slaconfig" table="slaconfig">
+        <id name="idslaconfig" type="java.lang.Integer">
+            <column name="idslaconfig" />
+            <generator class="identity" />
+        </id>
+        <property name="seloption" type="java.lang.Integer">
+            <column name="seloption" />
+        </property>
+        <property name="option1inteval" type="java.lang.Integer">
+            <column name="option1inteval" />
+        </property>
+        <property name="option1deduction" type="java.lang.Integer">
+            <column name="option1deduction" />
+        </property>
+        <property name="option2inteval" type="java.lang.Integer">
+            <column name="option2inteval" />
+        </property>
+        <property name="option2deduction" type="java.lang.Integer">
+            <column name="option2deduction" />
+        </property>
+    </class>
+</hibernate-mapping>

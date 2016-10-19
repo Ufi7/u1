@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.u1.model.AssetAttribute" table="ASSET_ATTRIBUTES">
+
+		<id name="assetAttrbutePid" type="integer">
+			<column name="ATTR_PID" />
+			<generator class="identity" />
+		</id>
+		
+<!-- 		<property name="assetPid" type="integer"> -->
+<!-- 			<column name="ASSET_PID"/> -->
+<!-- 		</property> -->
+		<many-to-one name="asset" lazy="proxy" class="com.u1.model.Asset" cascade="none">
+			<column name="ASSET_PID" not-null="true" />
+		</many-to-one>
+		
+		<property name="attributeTemplatePid" type="integer">
+			<column name="ATTRIBUTE_TEMPLATE_PID"/>
+		</property>
+		
+		<property name="stringValue" type="string">
+			<column name="STRING_VALUE" length="500" />
+		</property>
+		<property name="integerValue" type="integer">
+			<column name="INTEGER_VALUE" />
+		</property>
+		<property name="doubleValue" type="double">
+			<column name="DOUBLE_VALUE" />
+		</property>
+		<property name="floatValue" type="float">
+			<column name="FLOAT_VALUE" />
+		</property>
+		<property name="dateValue" type="date">
+			<column name="DATE_VALUE" />
+		</property>
+		<property name="booleanValue" type="boolean">
+			<column name="BOOLEAN_VALUE" />
+		</property>
+		<bag name="selectedOptionList" table="asset_attr_select" lazy="false" > 
+			<key column="ATTR_PID"></key> 
+			<many-to-many class="com.u1.model.AttrSelectOption" column="ATTR_SELECT_OPT_PID"></many-to-many>
+		</bag>
+		
+	</class>
+</hibernate-mapping>

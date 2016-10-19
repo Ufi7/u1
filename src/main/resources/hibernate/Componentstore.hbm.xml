@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-3-5 12:24:16 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.u1.model.Componentstore" table="componentstore" catalog="u1">
+        <id name="componentStoreId" type="integer">
+            <column name="COMPONENT_STORE_ID" />
+            <generator class="identity" />
+        </id>
+<!--         <property name="componentId" type="int"> -->
+<!--             <column name="COMPONENT_ID" not-null="true" /> -->
+<!--         </property> -->
+		<many-to-one name="component" lazy="false" fetch="join" class="com.u1.model.Component" cascade="none">
+			<column name="COMPONENT_ID"/>
+		</many-to-one>
+        <property name="customerId" type="integer">
+            <column name="CUSTOMER_ID" not-null="true" />
+        </property>
+<!-- 		<many-to-one name="customer" lazy="false" fetch="join" class="com.u1.model.Customer" cascade="none"> -->
+<!-- 			<column name="CUSTOMER_ID"/> -->
+<!-- 		</many-to-one> -->
+        <property name="count" type="java.lang.Integer">
+            <column name="COUNT" not-null="true" />
+        </property>
+        <property name="enabled" type="boolean">
+            <column name="ENABLED" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

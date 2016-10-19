@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-3-11 17:31:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.u1.model.Componentrecord" table="componentrecord" catalog="u1">
+        <id name="componentrecordId" type="int">
+            <column name="COMPONENTRECORD_ID" />
+            <generator class="identity" />
+        </id>
+<!--         <property name="componentstoreId" type="int"> -->
+<!--             <column name="COMPONENTSTORE_ID" not-null="true" /> -->
+<!--         </property> -->
+		<many-to-one name="componentstore" lazy="false" fetch="join" class="com.u1.model.Componentstore" cascade="none">
+			<column name="COMPONENTSTORE_ID" not-null="true" />
+		</many-to-one>
+<!--         <property name="customerId" type="int"> -->
+<!--             <column name="CUSTOMER_ID" not-null="true" /> -->
+<!--         </property> -->
+<!--         <property name="userId" type="int"> -->
+<!--             <column name="USER_ID" not-null="true" /> -->
+<!--         </property> -->
+<!--         <property name="taskId" type="int"> -->
+<!--             <column name="TASK_ID"/> -->
+<!--         </property> -->
+		<many-to-one name="user" lazy="false" fetch="join" class="com.u1.model.RefUser" cascade="none">
+			<column name="USER_ID"/>
+		</many-to-one>
+<!-- 		<many-to-one name="task" lazy="false" fetch="join" class="com.u1.model.RefTask" cascade="none"> -->
+<!-- 			<column name="TASK_ID"/> -->
+<!-- 		</many-to-one> -->
+		<many-to-one name="taskLog" lazy="false" fetch="join" class="com.u1.model.TaskLog" cascade="none">
+			<column name="TASK_LOG_ID"/>
+		</many-to-one>
+        <property name="quantity" type="int">
+            <column name="QUANTITY" not-null="true" />
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="PRICE" precision="22" scale="0" />
+        </property>
+        <property name="reason" type="int">
+            <column name="REASON" not-null="true" />
+        </property>
+        <property name="remark" type="string">
+            <column name="REMARK" length="100" />
+        </property>
+<!--         <property name="createdDatetime" type="timestamp"> -->
+<!--             <column name="CREATED_DATETIME" length="19" /> -->
+<!--         </property> -->
+        <property name="createdDatetime" type="timestamp" generated="insert">
+            <column name="CREATED_DATETIME" length="19" not-null="true"  default="CURRENT_TIMESTAMP"/>
+        </property>
+        <property name="logQuantity" type="int">
+            <column name="QUANTITY_LOG" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

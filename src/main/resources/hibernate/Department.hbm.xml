@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-9-21 23:13:02 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.u1.model.Department" table="department">
+        <id name="departmentPid" type="integer">
+            <column name="DEPARTMENT_PID" />
+            <generator class="identity" />
+        </id>
+        <property name="departmentName" type="string">
+            <column name="DEPARTMENT_NAME" length="100" not-null="true" />
+        </property>
+        <property name="departmentDesc" type="string">
+            <column name="DEPARTMENT_DESC" length="300" not-null="true" />
+        </property>
+        <property name="enabled" type="boolean">
+            <column name="ENABLED" not-null="true" />
+        </property>
+        <many-to-one name="customer" lazy="false" fetch="join" class="com.u1.model.Customer" cascade="none">
+			<column name="CUSTOMER_ID"/>
+		</many-to-one>
+    </class>
+</hibernate-mapping>

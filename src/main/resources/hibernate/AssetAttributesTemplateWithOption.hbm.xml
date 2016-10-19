@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.u1.model.AssetAttributesTemplateWithOption"
+		table="ASSET_ATTRIBUTES_TEMPLATE">
+
+		<id name="assetAttrTemplatePid" type="integer">
+			<column name="ATTRIBUTE_TEMPLATE_PID" />
+			<generator class="identity" />
+		</id>
+		<property name="attributeName" type="string">
+			<column name="ATTRIBUTE_NAME" length="200" not-null="true" />
+		</property>
+		<property name="attributeType" type="string">
+			<column name="ATTRIBUTE_TYPE" not-null="true" />
+		</property>
+<!-- 		<property name="assetTypePid" type="string"> -->
+<!-- 			<column name="ASSET_TYPE_PID" not-null="true" /> -->
+<!-- 		</property> -->
+		<property name="assetTypePid" type="integer">
+			<column name="ASSET_TYPE_PID" not-null="true" />
+		</property>
+		<property name="primaryType" type="string">
+			<column name="PRIMARY_TYPE" not-null="false" />
+		</property>
+		<property name="section" type="string">
+			<column name="SECTION" not-null="false" />
+		</property>
+		<property name="length" type="integer">
+			<column name="LENGTH" not-null="false" default="20" />
+		</property>
+		<property name="required" type="boolean">
+			<column name="REQUIRED" not-null="true" />
+		</property>
+		<property name="enabled" type="boolean">
+			<column name="ENABLED" not-null="true" />
+		</property>
+		<bag name="selectOptionList" table="ATTRIBUTE_SELECT_OPTION" lazy="false" fetch="select" cascade="all" inverse="true">
+			<key>
+				<column name="ATTRIBUTE_TEMPLATE_PID" not-null="true" />
+			</key>
+			<one-to-many class="com.u1.model.AttrSelectOption"/>
+		</bag>
+	</class>
+</hibernate-mapping>

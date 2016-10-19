@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-12-10 10:55:43 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.u1.model.SimpleTask" table="task_items">
+            <id name="taskPid" type="integer">
+                <column name="TASK_PID" />
+                <generator class="identity" />
+            </id>
+            <property name="taskName" type="string">
+                <column name="TASK_NAME" length="200" />
+            </property>
+<!--             <property name="rootcause" type="string"> -->
+<!--                 <column name="ROOT_CAUSE" length="200" /> -->
+<!--             </property> -->
+            <property name="status" type="string">
+                <column name="STATUS" length="20" />
+            </property>
+<!--             <property name="taskTypeCode" type="string"> -->
+<!--                 <column name="TASK_TYPE_CODE" length="20" /> -->
+<!--             </property> -->
+            <many-to-one name="taskType" lazy="false" fetch="join" class="com.u1.model.TaskType" cascade="none">
+				<column name="TASK_TYPE_PID" not-null="true" />
+			</many-to-one>
+<!--             <property name="createdByName" type="string"> -->
+<!--                 <column name="CREATED_BY_name" length="100" /> -->
+<!--             </property> -->
+<!--             <property name="assignedToName" type="string"> -->
+<!--                 <column name="ASSIGNED_TO_name" length="100" /> -->
+<!--             </property> -->
+<!--             <many-to-one name="createdBy" lazy="false" fetch="join" class="com.u1.model.SimpleUsers" cascade="none"> -->
+<!-- 				<column name="CREATED_BY"/> -->
+<!-- 			</many-to-one> -->
+<!-- 			<many-to-one name="assignedTo" lazy="false" fetch="join" class="com.u1.model.SimpleUsers" cascade="none"> -->
+<!-- 				<column name="ASSIGNED_TO"/> -->
+<!-- 			</many-to-one> -->
+			<property name="assignedToId" type="integer">
+				<column name="ASSIGNED_TO"></column>
+			</property>
+<!--             <property name="startDatetime" type="timestamp"> -->
+<!--                 <column name="START_DATETIME" length="19" /> -->
+<!--             </property> -->
+<!--             <property name="endDatetime" type="timestamp"> -->
+<!--                 <column name="END_DATETIME" length="19" /> -->
+<!--             </property> -->
+<!--             <property name="detail" type="string"> -->
+<!--                 <column name="DETAIL" length="65535" /> -->
+<!--             </property> -->
+            <property name="taskNum" type="string">
+                <column name="TASK_NUM" length="20" />
+            </property>
+<!--             <property name="createdDatetime" type="timestamp" generated="insert"> -->
+<!--                 <column name="CREATED_DATETIME" length="19" not-null="true"  default="CURRENT_TIMESTAMP"/> -->
+<!--             </property> -->
+<!--             <property name="lastUpdatedTimestamp" type="timestamp" generated="always"> -->
+<!--                 <column name="LAST_MODIFIED_DATETIME" length="19" not-null="true" default="ON UPDATE CURRENT_TIMESTAMP"/> -->
+<!--             </property> -->
+<!--             <property name="dueDatetime" type="timestamp"> -->
+<!--                 <column name="DUE_DATETIME" length="19" /> -->
+<!--             </property> -->
+<!--             <property name="contact" type="string"> -->
+<!--                 <column name="CONTACT" length="100" /> -->
+<!--             </property> -->
+            <property name="piority" type="string">
+                <column name="PIORITY" length="20" />
+            </property>
+<!--             <property name="score" type="java.lang.Integer"> -->
+<!--                 <column name="SCORE" /> -->
+<!--             </property> -->
+<!--             <property name="departmentstr" type="string"> -->
+<!--                 <column name="DEPARTMENTstr" length="100" /> -->
+<!--             </property> -->
+<!--             <property name="department" type="integer"> -->
+<!--                 <column name="DEPARTMENT"/> -->
+<!--             </property> -->
+			<property name="customerId" type="integer">
+				<column name="CUSTOMER_ID"></column>
+			</property>
+<!-- 			<many-to-one name="customer" lazy="false" fetch="join" class="com.u1.model.Customer" cascade="none"> -->
+<!-- 				<column name="CUSTOMER_ID"/> -->
+<!-- 			</many-to-one> -->
+<!-- 			<many-to-one name="department" lazy="false" fetch="join" class="com.u1.model.Department" cascade="none"> -->
+<!-- 				<column name="DEPARTMENT"/> -->
+<!-- 			</many-to-one> -->
+            <property name="enabled" type="boolean">
+	            <column name="ENABLED" not-null="true" />
+	        </property>
+    </class>
+</hibernate-mapping>

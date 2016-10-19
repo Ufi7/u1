@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-12-29 0:32:24 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.u1.model.Attachment" table="attachment">
+        <id name="atmId" type="java.lang.Integer">
+            <column name="atm_id" />
+            <generator class="identity" />
+        </id>
+        <property name="taskId" type="java.lang.Integer">
+            <column name="task_id" />
+        </property>
+        <property name="assetId" type="java.lang.Integer">
+            <column name="asset_id" />
+        </property>
+        <property name="filename" type="string">
+            <column name="filename" length="100" />
+        </property>
+        <property name="storefilename" type="string">
+            <column name="storefilename" length="100" />
+        </property>
+        <property name="lastupdatetimestamp"  type="timestamp" generated="insert">
+            <column name="lastupdatetimestamp" length="19"  default="CURRENT_TIMESTAMP" />
+        </property>
+        <property name="enabled" type="boolean">
+            <column name="enabled" />
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="100" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="45" />
+        </property>
+        <property name="size" type="long">
+            <column name="size" length="45" />
+        </property>
+        <many-to-one name="owner" lazy="false" fetch="join" class="com.u1.model.SimpleUsers" cascade="none">
+			<column name="OWNER"/>
+		</many-to-one>
+    </class>
+</hibernate-mapping>
