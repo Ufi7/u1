@@ -1,0 +1,175 @@
+/* Copyright © 2006-11 Spiceworks, Inc.  All Rights Reserved.  http://www.spiceworks.com */
+	/* Login page styles
+*****************************************************************************/
+body.login {
+	background: #fff none;
+	border-top: 0;
+}
+
+body {
+	font: 62.5% Arial, Sans-Serif;
+	color: #333;
+	background: #FFF;
+	padding: 0 3px;
+}
+
+a:link,a:visited {
+	text-decoration: none;
+	color: #003366;
+}
+
+a:hover {
+	color: #0099CC;
+}
+
+#wrapper,#wrapper h3 {
+	width: 579px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#wrapper {
+	position: relative;
+	width: 539px;
+	height: 293px;
+	background: #fff url(../img/login.jpg) no-repeat top left;
+	font-size: 1.2em;
+	margin-top: 100px;
+	padding: 35px 20px 20px;
+}
+
+p.copy {
+	font-size: 10px;
+	text-align: center;
+	padding: 0;
+	margin: 0 auto;
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	width: 539px;
+}
+
+#wrapper h1 {
+	margin: 0;
+	padding: 0 0 13px;
+	width: 100%;
+	text-align: center;
+	position: relative;
+}
+
+body.branded #wrapper h1 {
+	background: transparent url(../images/logos/powered_by.png) no-repeat
+		bottom center;
+}
+
+#message_container {
+	height: 30px; width : 100%;
+	text-align: center;
+	margin-top: 35px;
+	width: 100%;
+}
+
+#message_container ul {
+	list-style-type: none;
+	text-align: center;
+}
+
+#message_container ul li {
+	list-style-type: none;
+	background: url(../img/loginerror.png) no-repeat bottom left;
+	margin: 0 auto;
+	width: 300px;
+}
+
+#message_container h3 {
+	position: absolute;
+	font-size: 14px;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+#wrapper form {
+	display: block;
+	width: 300px;
+	margin: 10px auto;
+	padding: 0;
+	padding: 10px 0 0;
+}
+
+#wrapper form input.text {
+	width: 230px;
+	/* see hacks.ie.css */
+}
+
+#wrapper form p {
+	line-height: 20px;
+	margin: 10px 0;
+	padding: 0;
+	clear: both;
+}
+
+#wrapper form p label {
+	display: block;
+	width: 60px;
+	text-align: right;
+	float: left;
+	margin-right: 4px;
+}
+
+#wrapper form p.actions {
+	width: 240px;
+	text-align: left;
+	position: relative;
+	left: 60px;
+	margin: 0;
+	position: relative;
+	top: 0;
+	/* see hacks.ie.css */
+}
+
+#wrapper form p.actions label {
+	float: none;
+	clear: none;
+	width: auto;
+	text-align: left;
+	display: inline;
+}
+
+#wrapper form p.actions button.sui-btn {
+	float: right;
+	margin-right: 0;
+	margin-top: -4px;
+}
+
+#wrapper #forgot_password {
+	font-size: 10px;
+	margin: 20px 0;
+	text-align: center;
+}
+
+/* incompatible browser message styles
+*********************************************************************************************/
+#incompatible {
+	position: absolute;
+	top: 80px;
+	left: 20px;
+	border: 1px solid #ccc;
+	background: #fff url(../images/layout/gradients/lighter_to_white.jpg)
+		repeat-x top left;
+	padding: 30px 20px 50px;
+	width: 496px;
+	height: 140px;
+	z-index: 100;
+}
+
+#incompatible h3 {
+	width: auto;
+	text-align: center;
+	font-size: 1.7em;
+	font-weight: normal;
+}
+
+#incompatible p {
+	
+}

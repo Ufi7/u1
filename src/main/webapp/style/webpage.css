@@ -1,0 +1,630 @@
+.new {
+	background: url(../img/new.png) no-repeat;
+}
+
+.search {
+	background: url(../img/search.png) no-repeat;
+}
+
+body {
+	font-family: '宋体', Arial, Helvetica, sans-serif;
+}
+
+ul,li {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#breadcrumbs {
+	border-bottom: 1px solid #ccc;
+	background-color: #fff;
+	line-height: 20px;
+	overflow: auto;
+	font-size: 12px;
+}
+
+#breadcrumbs li {
+	float: left;
+	padding-left: 8px;
+}
+
+#breadcrumbs li a {
+	padding: 0 24px 2px 0;
+	background: transparent url(../img/blue-arrow.png) no-repeat right center;
+}
+
+#breadcrumbs li a:link,#breadcrumbs li a:visited {
+	text-decoration: none;
+	color: #003366;
+}
+
+#breadcrumbs li a:hover,#breadcrumbs li a:focus {
+	color: #0099CC;
+}
+
+#breadcrumbs li {
+	color: #0099CC;
+}
+
+.dashboard1 {
+	width: 60%;
+	vertical-align: top;
+}
+
+a {
+	text-decoration: none;
+}
+
+.dashboard2 {
+	vertical-align: top;
+}
+
+.layout1 {
+	width: 350px;
+	vertical-align: top;
+}
+
+.layout2 {
+	width: 100%;
+	vertical-align: top;
+}
+
+.dash1 {
+	width: 35%;
+	vertical-align: top;
+	margin-right: 10px;
+}
+
+.customCol1 {
+	width: 23%;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: bold;
+}
+
+.pwdcol1 {
+	width: 120px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	text-align: left;
+}
+
+.pwdcol2 {
+	padding-left: 4px;
+}
+
+.customCol2 {
+	width: 80%;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.customCol11 {
+	width: 23%;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.customCol12 {
+	width: 80%;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: bold;
+}
+
+.dash2 {
+	width: 55%;
+	vertical-align: top;
+}
+
+.col11 {
+	width: 20px;
+}
+
+.col22 {
+	width: 10px;
+}
+
+.col33 {
+	width: 40px;
+}
+
+.attcol1 {
+	width: 10%;
+}
+
+.attcol2 {
+	width: 90%;
+}
+
+.col1 {
+	width: 130px;
+	font-weight: bold;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.col2 {
+	width: 220px;
+	padding-right: 50px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.col3 {
+	width: 130px;
+	font-weight: bold;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.col11 {
+	width: 70px;
+	font-weight: bold;
+}
+
+.col12 {
+	width: 200px;
+	padding-right: 50px;
+}
+
+.col12 {
+	width: 200px;
+}
+
+.col1 {
+	width: 130px;
+	font-weight: bold;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.grid21 {
+	width: 200px;
+	vertical-align: top;
+}
+
+.grid22 {
+	width: 90%;
+	margin-left: 10px;
+}
+
+.col2 {
+	width: 220px;
+	padding-right: 50px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.col3 {
+	width: 130px;
+	font-weight: bold;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.col4 {
+	width: 230px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.col1ForLabel {
+	width: 130px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.col1ForCompany {
+	width: 130px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.col1ForCompany3 {
+	width: 180px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.col1ForValue {
+	width: 130px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: bold;
+}
+
+.col3ForValue {
+	width: 130px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: bold;
+}
+
+.col2ForLabel {
+	width: 233px;
+	padding-right: 50px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.col2Foruser {
+	width: 155px;
+	padding-right: 20px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.col4ForValue {
+	width: 220px;
+	padding-right: 50px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: bold;
+}
+
+.col3ForLabel {
+	width: 160px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.col4ForLabel {
+	width: 230px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.dtlcol1 {
+	width: 130px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.dtlcol2 {
+	width: 220px;
+	padding-right: 50px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: bold;
+}
+
+.dtlcol3 {
+	width: 130px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.dtlcol4 {
+	width: 230px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: bold;
+}
+
+#menu {
+	z-index: 1;
+}
+
+.actions {
+	padding: 0;
+}
+
+.ui-tabs-panels {
+	background: #ECF4F4;
+}
+
+.labelCol {
+	font-weight: bold;
+}
+
+.ui-panel .ui-panel-titlebar-icon,.ui-panel .ui-panel-titlebar-icon:hover,.ui-panel .ui-panel-titlebar-icon:focus
+	{
+	margin-top: -0.3em;
+}
+
+/* Simple scalable breadcrumb by Veerle Pieters
+------------------------------------------------------------------*/
+ul,li {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	font-family: '宋体', Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+}
+
+#crumbs {
+	height: 2.3em;
+	border: 1px solid #dedede;
+}
+
+#crumbs li {
+	float: left;
+	line-height: 2.3em;
+	color: #777;
+	padding-left: .75em;
+}
+
+#crumbs li a {
+	background: url(../img/crumbs.gif) no-repeat right center;
+	display: block;
+	padding: 0 20px 0 0;
+}
+
+#crumbs li a:link,#crumbs li a:visited {
+	color: #777;
+	text-decoration: none;
+}
+
+#crumbs li a:hover,#crumbs li a:focus {
+	color: #D7D7D2;
+}
+
+.col1UserSearch {
+	width: 110px;
+	padding-top: 1px;
+	padding-bottom: 2px;
+}
+
+.col2UserSearch {
+	width: 190px;
+	padding-top: 1px;
+	padding-bottom: 2px;
+}
+
+.col3UserSearch {
+	width: 110px;
+	padding-top: 1px;
+	padding-bottom: 2px;
+}
+
+.col4UserSearch {
+	width: 190px;
+	padding-top: 1px;
+	padding-bottom: 2px;
+}
+
+img {
+	border: 0;
+}
+
+.required {
+	padding-left: 9px;
+	background-image: url(../img/r_star.png);
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+
+.labelText {
+	padding-left: 9px;
+}
+
+.ui-icon.company {
+	background-image: url("../img/company_icon.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.department {
+	background-image: url("../img/department.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.groups {
+	background-image: url("../img/groups.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.devsearch {
+	background-image: url("../img/devSearch.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.user {
+	background-image: url("../img/user_icon.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.group {
+	background-image: url("../img/group_icon.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.userinfo {
+	background-image: url("../img/userinfo_icon.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.rs {
+	background-image: url("../img/rs_icon.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.delete {
+	background-image: url("../img/remove.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.saveBnt {
+	background-image: url("img/saveicon.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.cancelBnt {
+	background-image: url("img/cancelicon.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.plusBnt {
+	background-image: url("img/plus.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+
+.ui-icon.update {
+	background-image: url("../img/arrow_circle_double.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.select {
+	background-image: url("../img/add.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.scissors {
+	background-image: url("../img/scissors2.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.userinfo {
+	background-image: url("../img/userinfo.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.confirm {
+	background-image: url("../img/confirm.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.taskNew {
+	background-image: url("../img/task_new.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.prop {
+	background-image: url("../img/prop.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.setting {
+	background-image: url("../img/setting.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.create_new {
+	background-image: url("../img/create_new.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.edit_find {
+	background-image: url("../img/edit_find.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.device {
+	background-image: url("../img/device.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.task {
+	background-image: url("../img/task.png") !important;
+	background-position: 0 0 !important;
+	width: 18px;
+	height: 18px;
+	padding-right: 3px;
+}
+
+.ui-icon.start {
+	background-image: url("../img/start.png") !important;
+	background-position: 0 0 !important;
+	width: 16px;
+	height: 16px;
+	padding-right: 3px;
+}
+
+.ui-icon.done {
+	background-image: url("../img/done.png") !important;
+	background-position: 0 0 !important;
+	width: 16px;
+	height: 16px;
+	padding-right: 3px;
+}
+
+.ui-icon.newNote {
+	background-image: url("../img/note.png") !important;
+	background-position: 0 0 !important;
+	width: 16px;
+	height: 16px;
+	padding-right: 3px;
+}
+
+.msgCol1 {
+	word-break: break-all;
+}
+
+.msgCol2 {
+	word-break: break-all;
+	width: 100px;
+}
+.ui-dialog div.ui-widget-content{
+padding: 3px;
+}
