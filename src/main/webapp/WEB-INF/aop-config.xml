@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+	xmlns:aop="http://www.springframework.org/schema/aop"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+		http://www.springframework.org/schema/aop   
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+						   
+<!-- 	<bean id="aspectJAdviceTest" class="com.u7.test.AspectJAdviceTest"/> -->
+<!-- 	<aop:config> -->
+<!-- 		<aop:aspect ref="aspectJAdviceTest"> -->
+<!-- 			<aop:before method="test1" pointcut="execution(* com.u7.dao.hibernateimpl.*.*(..))"/> -->
+<!-- 			<aop:after method="test2" pointcut="execution(* com.u7.dao.hibernateimpl.*.*(..))"/> -->
+<!-- 			<aop:before method="test3" pointcut="execution(* com.u7.controller.*.*(..))"/> -->
+<!-- 			<aop:after method="test4" pointcut="execution(* com.u7.controller.*.*(..))"/> -->
+<!-- 		</aop:aspect> -->
+<!-- 	</aop:config> -->
+	
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+	<!-- debug log advice -->
+<!-- 	<bean id="logAdvice" class="com.u7.util.LogAdvice"/> -->
+	
+<!-- 	<bean id="serviceLogAdvior" class="org.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor"> -->
+<!-- 		<property name="advice" ref="logAdvice"/> -->
+<!-- 		<property name="expression" value="execution(* com.u7.service.impl.*.*(..))"/> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="daoLogAdvior" class="org.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor"> -->
+<!-- 		<property name="advice" ref="logAdvice"/> -->
+<!-- 		<property name="expression" value="execution(* com.u7.dao.*impl.*.*(..))"/> -->
+<!-- 	</bean> -->
+						   
+</beans>

@@ -1,0 +1,133 @@
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+  <definition name="u1template" template="/jsp/u1template.jsp">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="header" value="/jsp/header.jsp"/>
+    <put-attribute name="content" value="/jsp/content.jsp"/>
+    <put-attribute name="footer" value="/jsp/footer.jsp"/>
+  </definition>
+  
+  <definition name="home" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/home.jsp"/>
+  </definition>
+  
+  <definition name="adduser" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/adduser.jsp"/>
+  </definition>
+  
+  <definition name="roles" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/roles.jsp"/>
+  </definition>
+  
+  <definition name="addroles" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/addroles.jsp"/>
+  </definition>
+  
+  <definition name="groups" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/groups.jsp"/>
+  </definition>
+  
+  <definition name="addgroups" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/addgroups.jsp"/>
+  </definition>
+  
+    <definition name="users" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/users.jsp"/>
+  </definition>
+  
+  <definition name="addusers" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/addusers.jsp"/>
+  </definition>
+  
+  <definition name="assettype" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/assettype.jsp"/>
+  </definition>
+  
+  <definition name="department" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/department.jsp"/>
+  </definition>
+  
+  <definition name="tasktype" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/tasktype.jsp"/>
+  </definition>
+  
+  <definition name="assetattributes" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/assetattributes.jsp"/>
+  </definition>
+  
+  <definition name="addassetattributes" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/addassetattributes.jsp"/>
+  </definition>
+  
+  <definition name="addasset" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/addasset.jsp"/>
+  </definition>
+
+  <definition name="assetgoroup" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/assetgoroup.jsp"/>
+  </definition>
+  
+  <definition name="asset" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/asset.jsp"/>
+  </definition> 
+  
+  <definition name="newasset" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/addasset.jsp"/>
+  </definition> 
+  
+  <definition name="assetgroup" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/assetgroup.jsp"/>
+  </definition> 
+  
+  <definition name="task" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/task.jsp"/>
+  </definition> 
+  
+  <definition name="newtask" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/addtask.jsp"/>
+  </definition> 
+  
+  <definition name="slasetup" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/slasetup.jsp"/>
+  </definition>
+  
+  <definition name="sla" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/sla.jsp"/>
+  </definition>
+  
+  <definition name="customer" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/customer.jsp"/>
+  </definition>
+  
+  <definition name="component" extends="u1template">
+    <put-attribute name="title" value="u1 System"/>
+    <put-attribute name="content" value="/jsp/component.jsp"/>
+  </definition>
+  
+</tiles-definitions>

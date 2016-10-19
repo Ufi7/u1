@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans   
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+                http://www.springframework.org/schema/tx   
+                http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
+                http://www.springframework.org/schema/aop   
+                http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+  <bean id="sessionFactory"
+        class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+
+    <property name="dataSource"
+              ref="dataSource" />
+    <property name="mappingResources">
+      <list>
+        <!--                 <value>hibernate/User.hbm.xml</value> -->
+        <!--                 <value>hibernate/User0.hbm.xml</value> -->
+        <!--                 <value>hibernate/UserAuth.hbm.xml</value> -->
+        <!--                 <value>hibernate/Player.hbm.xml</value>  -->
+        <!--                 <value>hibernate/Team.hbm.xml</value> -->
+        <!--                 <value>hibernate/Player0.hbm.xml</value>  -->
+        <!--                 <value>hibernate/Team0.hbm.xml</value>   -->
+        <!--                 <value>hibernate/Teammember.hbm.xml</value> -->
+        <!--                 <value>hibernate/P2TTeammember.hbm.xml</value> -->
+        <!--                 <value>hibernate/T2PTeammember.hbm.xml</value> -->
+        <!--                 <value>hibernate/Topic.hbm.xml</value> -->
+        <!--                 <value>hibernate/Comment.hbm.xml</value>     -->
+        <value>hibernate/AssetAttribute.hbm.xml</value>
+        <value>hibernate/UserForAuthOnly.hbm.xml</value>
+<!--         <value>hibernate/Users.hbm.xml</value> -->
+        <value>hibernate/Resources.hbm.xml</value>
+        <value>hibernate/Roles.hbm.xml</value>
+        <value>hibernate/RoleWithResource.hbm.xml</value>
+        <value>hibernate/Groups.hbm.xml</value>
+        <value>hibernate/GroupWithRole.hbm.xml</value>
+        <value>hibernate/SimpleUsers.hbm.xml</value>
+        <value>hibernate/SimpleUserWithGroup.hbm.xml</value>
+        <value>hibernate/SimpleUserWithGroupAndPassword.hbm.xml</value>
+        <value>hibernate/AssetType.hbm.xml</value>
+        <value>hibernate/AssetTypeWithTemplate.hbm.xml</value>
+        <value>hibernate/Department.hbm.xml</value>
+        <value>hibernate/TaskType.hbm.xml</value>
+        <value>hibernate/AssetAttributesTemplate.hbm.xml</value>
+        <value>hibernate/AssetAttributesTemplateWithOption.hbm.xml</value>
+        <value>hibernate/AttrSelectOption.hbm.xml</value>
+        <value>hibernate/Asset.hbm.xml</value>
+        <value>hibernate/SimpleAsset.hbm.xml</value>
+        <value>hibernate/SimpleAssetWithTask.hbm.xml</value>
+        <value>hibernate/SimpleAssetWithGroup.hbm.xml</value>
+        <value>hibernate/AssetGroup.hbm.xml</value>
+        <value>hibernate/AssetGroupWithSimpleAsset.hbm.xml</value>
+        <value>hibernate/Task.hbm.xml</value>
+        <value>hibernate/SimpleTask.hbm.xml</value>
+        <value>hibernate/TaskWithAsset.hbm.xml</value>
+        <value>hibernate/TaskLog.hbm.xml</value>
+        <value>hibernate/AssetLog.hbm.xml</value>
+        <value>hibernate/TaskForUpdate.hbm.xml</value>
+        <value>hibernate/Attachment.hbm.xml</value>
+        <value>hibernate/Slaconfig.hbm.xml</value>
+        <value>hibernate/Customer.hbm.xml</value>
+        <value>hibernate/Component.hbm.xml</value>
+        <value>hibernate/Componentstore.hbm.xml</value>
+        <value>hibernate/Componentrecord.hbm.xml</value>
+        <value>hibernate/RefUser.hbm.xml</value>
+        <value>hibernate/RefTask.hbm.xml</value>
+        <value>hibernate/RefCustomer.hbm.xml</value>
+      </list>
+    </property>
+        <property name="hibernateProperties">  
+            <value>  
+                hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+                hibernate.show_sql=false
+                hibernate.format_sql=false
+                connection.autoReconnect=true
+                connection.autoReconnectForPools=true
+                connection.is-connection-validation-required=true
+            </value>  
+        </property>  
+  </bean>
+  <bean id="transactionManager"
+        class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+
+    <property name="sessionFactory"
+              ref="sessionFactory"></property>
+  </bean>
+  <tx:advice id="txAdice"
+             transaction-manager="transactionManager">
+    <tx:attributes>
+      <tx:method name="insert*"
+                 propagation="REQUIRED" />
+      <tx:method name="save*"
+                 propagation="REQUIRED" />
+      <tx:method name="add*"
+                 propagation="REQUIRED" />
+      <tx:method name="update*"
+                 propagation="REQUIRED" />
+      <tx:method name="merge"
+                 propagation="REQUIRED" />
+      <tx:method name="myMerge"
+                 propagation="REQUIRED" />
+      <tx:method name="enable*"
+                 propagation="REQUIRED" />
+      <tx:method name="disable*"
+                 propagation="REQUIRED" />
+      <tx:method name="delete*"
+                 propagation="REQUIRED" />
+      <tx:method name="consume*"
+                 propagation="REQUIRED" />
+      <tx:method name="get*"
+                 propagation="REQUIRED"
+                 read-only="true" />
+      <tx:method name="query*"
+                 propagation="REQUIRED"
+                 read-only="true" />
+      <tx:method name="list*"
+                 propagation="REQUIRED"
+                 read-only="true" />
+      <tx:method name="*"
+                 propagation="REQUIRED"
+                 read-only="true" />
+      <!-- test --><tx:method name="test"
+                 propagation="REQUIRED" /> <!-- test -->
+    </tx:attributes>
+  </tx:advice>
+  <aop:config>
+    <aop:pointcut id="pointCut"
+                  expression="execution(* com.u1.service.impl.*.*(..))" />
+    <aop:advisor pointcut-ref="pointCut"
+                 advice-ref="txAdice" />
+  </aop:config>
+  <bean id="commonDao"
+        class="com.u1.dao.hibernateimpl.CommonDaoImpl">
+    <property name="sessionFactory"
+              ref="sessionFactory" />
+  </bean>
+  <bean id="userAuthDao"
+        class="com.u1.dao.hibernateimpl.UserAuthDaoImpl">
+    <property name="sessionFactory"
+              ref="sessionFactory" />
+  </bean>
+  <bean id="sqlDao"
+        class="com.u1.dao.hibernateimpl.SqlDaoImpl">
+        
+    <property name="sessionFactory"
+              ref="sessionFactory" />
+  </bean>
+</beans>

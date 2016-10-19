@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    	http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    	http://www.springframework.org/schema/mvc
+    	http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+    	http://www.springframework.org/schema/util
+    	http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+    
+    <mvc:annotation-driven conversion-service="conversionService">
+	  <mvc:message-converters register-defaults="true">
+	    <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+	      <property name="supportedMediaTypes" value = "text/plain;charset=UTF-8" />
+	    </bean>
+	  </mvc:message-converters>
+	</mvc:annotation-driven>
+    
+	<mvc:resources mapping="/img/**" location="/img/" />
+	<mvc:resources mapping="/js/**" location="/js/" />
+	<mvc:resources mapping="/css/**" location="/css/" />
+	<mvc:resources mapping="/style/**" location="/style/" />
+ 	
+ 	<!-- Controller auto scan -->
+	<context:component-scan base-package="com.u1.controller" />
+ 
+	<!-- View Resolver -->
+	<bean id="jspviewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- tiles页面解析器--> 
+<!-- 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
+<!-- 	  <property name="viewClass"> -->
+<!-- 	    <value>org.springframework.web.servlet.view.tiles.TilesView</value> -->
+<!-- 	  </property> -->
+<!-- 	  <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/> -->
+<!-- 	</bean> -->
+
+	<bean id="tilesviewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+	  <property name="basename" value="views"/>
+	  <property name="order" value="2"></property>
+	</bean>
+	
+	<!-- tiles配置器-->
+	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+	 <property name="definitions">
+	   <list>
+	     <value>/WEB-INF/u1-tiles-def.xml</value>
+	   </list>
+	 </property>
+	</bean>
+    
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/js/**"/>
+			<mvc:exclude-mapping path="/js/**"/>
+			<mvc:exclude-mapping path="/img/**"/>
+			<mvc:exclude-mapping path="/css/**"/>
+			<bean class="com.u1.interceptor.SecurityCheckInterceptor">
+				
+			</bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">  
+	  <property name="providerClass" value="org.hibernate.validator.HibernateValidator" />  
+	</bean> 
+	
+	<bean id="conversionService"  
+        class="org.springframework.context.support.ConversionServiceFactoryBean">  
+        <property name="converters">  
+            <list>
+            	<bean class="com.u1.util.converter.StringToAssetType" />
+                <bean class="com.u1.util.converter.StringToAssetTypeWithTemplate" />
+                <bean class="com.u1.util.converter.StringToTaskType" />
+                <bean class="com.u1.util.converter.StringToDepartment" />
+                <bean class="com.u1.util.converter.StringToSimpleUser" />
+                <bean class="com.u1.util.converter.StringToDate" />  
+                <bean class="com.u1.util.converter.StringToInterger"/>
+                <bean class="com.u1.util.converter.StringToCustomer"/>
+                <bean class="com.u1.util.converter.StringToComponent"/>
+                <bean class="com.u1.util.converter.StringToRefUser"/>
+                <bean class="com.u1.util.converter.StringToRefTask"/>
+                <bean class="com.u1.util.converter.StringToRefCustomer"/>
+            </list>  
+        </property>  
+    </bean>
+    
+    <bean id="multipartResolver"
+	class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+	p:defaultEncoding="UTF-8" />
+</beans>
