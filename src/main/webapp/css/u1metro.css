@@ -1,0 +1,37 @@
+.metroaa{
+width:150px;
+height:50px;
+font-size:12px;
+line-height:14px;
+}
+.metroba{
+width:150px;
+height:102px;
+font-size:18px;
+line-height:21px;
+}
+.metroca{
+width:302px;
+height:102px;
+font-size:24px;
+line-height:28px;
+}
+.metroda{
+width:302px;
+height:206px;
+font-size:48px;
+line-height:64px;
+}
+.u7metrostyle{
+border:1px solid #ffffff;
+position: absolute;
+margin:2px;
+background-color:white;
+color:white;
+text-align:left;
+text-decoration: none;
+word-break:break-all;
+}
+.u7metrostyle .s{
+color:#eeeeee;
+}
